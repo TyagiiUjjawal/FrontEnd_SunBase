@@ -9,10 +9,13 @@ function Login() {
   const [token, setToken] = useState("");
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/proxy-auth", {
-        login_id: loginId,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://sunbase-back.onrender.com/proxy-auth",
+        {
+          login_id: loginId,
+          password: password,
+        }
+      );
 
       if (response.status === 200) {
         const receivedToken = response.data.access_token;

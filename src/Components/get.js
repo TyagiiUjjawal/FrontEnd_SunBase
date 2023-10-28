@@ -16,11 +16,14 @@ function CustomerList() {
         return;
       }
       try {
-        const response = await axios.get("http://localhost:5000/get-customer", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://sunbase-back.onrender.com/get-customer",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setCustomerData(response.data);
       } catch (error) {
         setError("Internal Server Error");

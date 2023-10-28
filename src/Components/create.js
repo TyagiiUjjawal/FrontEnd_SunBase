@@ -65,7 +65,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/create-customer",
+        "https://sunbase-back.onrender.com/create-customer",
         {
           token,
           data: {
